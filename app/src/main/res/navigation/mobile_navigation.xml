@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/navigation_home">
+
+    <fragment
+        android:id="@+id/navigation_home"
+        android:name="com.dicoding.englishbuddy.ui.bottom_nav.ui.home.HomeFragment"
+        android:label="@string/title_home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_navigation_home_to_navigation_profile"
+            app:destination="@id/navigation_profile"/>
+
+        <action
+            android:id="@+id/action_navigation_home_to_listening"
+            app:destination="@+id/listeningActivity"/>
+
+        <action
+            android:id="@+id/action_navigation_home_to_writing"
+            app:destination="@+id/writingActivity"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_profile"
+        android:name="com.dicoding.englishbuddy.ui.bottom_nav.ui.profile.ProfileFragment"
+        android:label="@string/title_profile"
+        tools:layout="@layout/fragment_profile" >
+        <action
+            android:id="@+id/action_navigation_profile_to_navigation_home"
+            app:destination="@id/navigation_home" />
+    </fragment>
+    <activity
+        android:id="@+id/listeningActivity"
+        android:name="com.dicoding.englishbuddy.ui.listening.ListeningActivity"
+        android:label="activity_listening"
+        tools:layout="@layout/activity_listening" />
+    <activity
+        android:id="@+id/writingActivity"
+        android:name="com.dicoding.englishbuddy.ui.writing.WritingActivity"
+        android:label="activity_writing"
+        tools:layout="@layout/activity_writing" />
+</navigation>
